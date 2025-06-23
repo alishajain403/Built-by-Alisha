@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Built By Alisha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <a href="index.html" class="back-link">← back to home</a>
+    
+    <h1>hi! nice to meet you!✨</h1>
+
+    <!-- Cute photo -->
+    <img src="alisha_about.jpg" alt="Alisha being cozy" class="about-photo" />
+
+    <h2> If you don't know already, my name is <strong>Alisha Jain</strong>! 🧸</h2>
+
+    <p>I'm a bioengineering student at UCR with the soul of a creative, the brain of a problem-solver, and the aesthetic of a Studio Ghibli scene wrapped in a knit sweater.</p>
+
+    <p>I believe the internet doesn't have to feel cold or overwhelming. I'm on a mission to build cozy digital corners — the kind that make you feel seen, soothed, and maybe even a little inspired.</p>
+
+    <p>Whether I’m coding a wellness app, editing a 2000s-inspired vlog, or designing my website with floating mugs and matcha toggles, I’m always looking for ways to blend storytelling, tech, and emotion.</p>
+
+    <div class="about-highlights">
+      <h2>Things That Define Me:</h2>
+      <ul>
+        <li>🌿 Half STEM, half storybook</li>
+        <li>🧠 Past: Behavioral tech for neurodiverse youth</li>
+        <li>🖼️ Present: Designer of “safe-feeling” digital spaces</li>
+        <li>🌙 Aesthetic: Warm tones, typewriters, low-fi playlists, 1am clarity</li>
+        <li>🎮 I love cozy games, soft spaces, and meaningful UX</li>
+      </ul>
+    </div>
+
+    <!-- Spotify Embed -->
+    <h2 style="margin-top: 2rem;">🎧 Music that feels like me:</h2>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3etzVkJ7CjRqlReJTobJtY?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <!-- Signature -->
+    <div class="signature">
+      <p>with love,</p>
+      <img src="signtuare.png" alt="Alisha's signature" />
+    </div>
+  </div>
+  <script src="theme-toggle.js"></script>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const backVideo = document.querySelector('.back-video');
+  
+    // Check saved theme on load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'matcha') {
+      body.classList.add('matcha-mode');
+      toggle.textContent = '🍫';
+      if (backVideo) {
+        backVideo.src = 'matcha.mp4';
+      }
+    }
+  
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('matcha-mode');
+      const isMatcha = body.classList.contains('matcha-mode');
+      localStorage.setItem('theme', isMatcha ? 'matcha' : 'cozy');
+      toggle.textContent = isMatcha ? '🍫' : '🍵';
+      if (backVideo) {
+        backVideo.src = isMatcha ? 'matcha.mp4' : 'cozy.mp4';
+      }
+    });
+  </script>
+  
+</body>
+</html>
+

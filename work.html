@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Work by Me - Built By Alisha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <a href="index.html" class="back-link">← back to home</a>
+
+    <h1>work with me! 💼</h1>
+
+    <p>Here’s where I’ve poured my time, energy, and care — from supporting neurodiverse youth to developing meaningful, people-centered design skills.</p>
+
+    <hr class="soft-divider" />
+
+    <!-- ✨ RBT SECTION -->
+    <div class="work-section">
+      <div class="work-header">
+        <h2>✨ Registered Behavior Technician</h2>
+        <span class="work-dates">2022 – 2024</span>
+      </div>
+
+      <p>I spent <strong>2 years</strong> supporting neurodiverse clients as an RBT, where I learned the value of active listening, emotional intelligence, and adaptive problem-solving.</p>
+
+      <ul>
+        <li>🧠 Supported 1:1 therapy for children with ASD</li>
+        <li>📝 Created and documented behavior plans</li>
+        <li>💬 Collaborated with psychologists, educators, and families</li>
+      </ul>
+    </div>
+
+    <!-- 🎬 VIDEO EDITOR SECTION -->
+    <div class="work-section">
+      <div class="work-header">
+        <h2>🎬 Commissioned Video Editor</h2>
+        <span class="work-dates">2019 – present</span>
+      </div>
+
+      <p>I’ve worked with clients to edit and produce personal YouTube vlogs and private video content. While the work is confidential, it involved everything from audio cleanup to visual storytelling and stylized transitions.</p>
+
+      <ul>
+        <li>✂️ Cut raw footage into smooth, flowing narratives</li>
+        <li>🎧 Synced music, added captions, cleaned up background audio</li>
+        <li>🎨 Used Canva, CapCut, and Final Cut Pro (based on client preference)</li>
+        <li>🤝 Delivered content that matched each client’s aesthetic + voice</li>
+      </ul>
+
+      <p class="note">🕊️ Due to privacy agreements, these videos are not publicly shared.</p>
+    </div>
+
+    <!-- 🛠️ TOOLS SECTION -->
+    <div class="work-section">
+      <h2>🛠️ Tools & Skills I Use</h2>
+      <ul class="skills-grid">
+        <li>UX Writing</li>
+        <li>JS</li>
+        <li>Microsoft Office</li>
+        <li>Canva</li>
+        <li>Python</li>
+        <li>Figma</li>
+        <li>Emotional Design</li>
+        <li>Storytelling</li>
+        <li>Basic Frontend HTML/CSS</li>
+        <li>Cozy Visual Direction ✨</li>
+      </ul>
+    </div>
+
+    <!-- 🌸 PROJECTS NOTE -->
+    <div class="work-section project-note">
+      <p>🌸 I also build digital side projects — wellness apps, interactive web spaces, and cozy corners of the internet.  
+        <a href="projects.html">Click here to explore them!</a>
+      </p>
+    </div>
+
+    <!-- 🖊️ SIGNATURE -->
+    <div class="signature">
+      <p>with purpose,</p>
+      <img src="signtuare.png" alt="Alisha's signature" />
+    </div>
+  </div>
+  <script src="theme-toggle.js"></script>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const backVideo = document.querySelector('.back-video');
+  
+    // Check saved theme on load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'matcha') {
+      body.classList.add('matcha-mode');
+      toggle.textContent = '🍫';
+      if (backVideo) {
+        backVideo.src = 'matcha.mp4';
+      }
+    }
+  
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('matcha-mode');
+      const isMatcha = body.classList.contains('matcha-mode');
+      localStorage.setItem('theme', isMatcha ? 'matcha' : 'cozy');
+      toggle.textContent = isMatcha ? '🍫' : '🍵';
+      if (backVideo) {
+        backVideo.src = isMatcha ? 'matcha.mp4' : 'cozy.mp4';
+      }
+    });
+  </script>
+  
+</body>
+</html>

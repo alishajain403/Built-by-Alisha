@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - Built By Alisha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <a href="index.html" class="back-link">← back to home</a>
+
+    <h1>things I’ve built ✨</h1>
+    <p>Here's a peek at the creative, cozy projects I’ve poured love into — from storytelling games to personal growth tools and digital edits.</p>
+
+    <hr class="soft-divider" />
+
+    <div class="project-section">
+      <h2>🌱 StayStrong: Recovery Tracker</h2>
+      <p>A motivational desktop app that supports those in recovery from addiction — with check-in logs, milestone celebrations, and motivational messages.</p>
+      <ul>
+        <li>📌 Built with Python and PySimpleGUI</li>
+        <li>🎉 Features include custom reminders and visual progress tracking</li>
+        <li>🌟 Designed with simplicity and emotional support in mind</li>
+      </ul>
+      <a href="https://replit.com/@ajain088/StayStrong" class="project-link" target="_blank">View on Replit →</a>
+    </div>
+
+    <hr class="soft-divider" />
+
+    <div class="project-section">
+      <h2>🕯️ Remembering the Little Days *(in progress)*</h2>
+      <p>A cozy narrative game about nostalgia, healing, and the moments we carry with us. Built with Ren’Py.</p>
+      <ul>
+        <li>📚 Interactive story with multiple branching paths</li>
+        <li>🎨 Custom character art, UI, and backgrounds</li>
+        <li>💬 Built using Ren’Py and hand-scripted story logic</li>
+      </ul>
+      <p class="note">🎮 Demo coming soon!</p>
+    </div>
+
+    <hr class="soft-divider" />
+
+    <div class="project-section">
+      <h2>🎞️ Personal Vlog Edits</h2>
+      <p>I’ve created and edited aesthetic vlogs and 2000s-style videos for friends and clients, helping them bring their memories to life.</p>
+      <ul>
+        <li>🎧 Audio syncing, background cleanup, and music layering</li>
+        <li>💻 Tools used: CapCut, Canva, Final Cut Pro</li>
+        <li>✨ Custom motion graphics and vintage overlays</li>
+      </ul>
+      <p class="note">🔐 Some videos are private and not publicly linked.</p>
+    </div>
+
+    <div class="signature">
+      <p>with creativity,</p>
+      <img src="signtuare.png" alt="Alisha's signature" />
+    </div>
+  </div>
+  <script src="theme-toggle.js"></script>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const backVideo = document.querySelector('.back-video');
+  
+    // Check saved theme on load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'matcha') {
+      body.classList.add('matcha-mode');
+      toggle.textContent = '🍫';
+      if (backVideo) {
+        backVideo.src = 'matcha.mp4';
+      }
+    }
+  
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('matcha-mode');
+      const isMatcha = body.classList.contains('matcha-mode');
+      localStorage.setItem('theme', isMatcha ? 'matcha' : 'cozy');
+      toggle.textContent = isMatcha ? '🍫' : '🍵';
+      if (backVideo) {
+        backVideo.src = isMatcha ? 'matcha.mp4' : 'cozy.mp4';
+      }
+    });
+  </script>
+  
+</body>
+</html>
+
