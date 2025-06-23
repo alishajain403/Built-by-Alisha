@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Built By Alisha</title>
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- 🔥 Background video -->
+    <video autoplay loop muted playsinline class="back-video" id="bg-video">
+      <source src="cozy.mp4" type="video/mp4" id="video-source"/>
+    </video>
+
+    <section class="container">
+      <header>
+        <h1 class="logo">Built By Alisha</h1>
+        <button id="theme-toggle" aria-label="Toggle Theme">🍵</button>
+        <ul class="nav">
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Work by Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </header>
+
+      <!-- 🧸 Hero -->
+      <div class="hero">
+        <img src="alisha.png" alt="Alisha headshot" class="profile-pic" />
+
+        <div class="hero_info">
+          <h1><span class="typewriter" data-texts="Hi, I'm Alisha!"></span></h1>
+          <p>I design digital spaces that feel like safe, cozy corners of the internet.</p>
+          <button class="btn">Download Resume</button>
+
+          <ul class="ul-icons">
+            <li><a href="https://www.instagram.com/alijihn/"><i class="bx bxl-instagram"></i></a></li>
+            <li><a href="www.linkedin.com/in/alishajainconnect"><i class="bx bxl-linkedin"></i></a></li>
+            <li><a href="#"><i class="bx bxl-github"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ☕ Floating Mugs -->
+      <section class="mug-grid">
+        <a href="work.html" class="mug-link">
+          <img src="coffeemug.png" alt="Work Mug" class="mug-img" />
+          <span class="mug-text">Work</span>
+        </a>
+
+        <a href="projects.html" class="mug-link">
+          <img src="coffeemug.png" alt="Projects Mug" class="mug-img" />
+          <span class="mug-text">Work by Me</span>
+        </a>
+
+        <a href="about.html" class="mug-link">
+          <img src="coffeemug.png" alt="About Mug" class="mug-img" />
+          <span class="mug-text">About Me</span>
+        </a>
+
+        <a href="contact.html" class="mug-link">
+          <img src="coffeemug.png" alt="Contact Mug" class="mug-img" />
+          <span class="mug-text">Contact Me ☁️</span>
+        </a>
+      </section>
+    </section>
+
+    <!-- Scripts -->
+    <script src="typewriter.js"></script>
+    <script src="theme-toggle.js"></script>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const backVideo = document.querySelector('.back-video');
+      
+        // Check saved theme on load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'matcha') {
+          body.classList.add('matcha-mode');
+          toggle.textContent = '🍫';
+          if (backVideo) {
+            backVideo.src = 'matcha.mp4';
+          }
+        }
+      
+        toggle.addEventListener('click', () => {
+          body.classList.toggle('matcha-mode');
+          const isMatcha = body.classList.contains('matcha-mode');
+          localStorage.setItem('theme', isMatcha ? 'matcha' : 'cozy');
+          toggle.textContent = isMatcha ? '🍫' : '🍵';
+          if (backVideo) {
+            backVideo.src = isMatcha ? 'matcha.mp4' : 'cozy.mp4';
+          }
+        });
+      </script>      
+  </body>
+</html>
+
